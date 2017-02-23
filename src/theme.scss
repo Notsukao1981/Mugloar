@@ -1,0 +1,19 @@
+/*  Base theme settings for Angular2 Materials.
+    Color pallete:
+    https://www.materialui.co/colors
+*/
+@import '~@angular/material/core/theming/all-theme';
+@include md-core();
+$primary: md-palette($md-grey);
+$accent:  md-palette($md-deep-purple, 50, A100, A400);
+$warn:    md-palette($md-red, 600);
+$theme: md-light-theme($primary, $accent, $warn);
+@include angular-material-theme($theme);
+
+/*
+    Since the rest (major part) of the CSS styling is written using Stylus preprocessor, it is unfortunate
+     that any other styling besides colors has to be covered in a different file (stylus/themes/default.styl).
+
+     Currently, Angular2 Materials theming can only be accomplished only using SASS, whereas primary CSS preprocessor
+      was deliberately picked to be Stylus (for Mugloar app).
+*/

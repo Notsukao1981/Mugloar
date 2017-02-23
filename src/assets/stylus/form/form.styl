@@ -1,0 +1,99 @@
+.form
+    margin 0
+    padding 10px
+    font-size fsForm
+    font-family ffPressStartK
+
+    &__header
+        display block
+        padding 10px
+        background-color rgba(cShade3, 0.4)
+        color cWhite2
+
+    &__hint
+        display block
+        padding 20px
+        margin 0
+        background-color rgba(cBrown3, 0.8)
+        background-image repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 2px,
+            cShade2 2px,
+            cShade2 4px /* The size of the gradient repeats by this size. */
+        )
+        color cRed3
+        text-shadow cShade1 1px 1px 3px
+        font-size (fsForm + 2)
+        line-height 120%
+        border 2px solid cBrown3
+        box-shadow inset 2px 2px 0 cOrange5, inset -2px -2px 0 cOrange5, inset 4px 4px 0 cGold2, inset -4px -4px 0 cGold2, inset 8px 8px 0 cOrange5, inset -8px -8px 0 cOrange5, inset 10px 10px 25px cShade1
+
+        p
+            margin 0
+            padding 0
+
+    &__group
+        margin 10px 0
+        padding 0
+        border 0
+
+    &__label
+        display inline-block
+        line-height 150%
+        width 200px
+        height 36px
+        color cWhite2
+        word-break break-word
+        padding 9px 0 0
+        margin 1px 0
+
+    &__control-wrap
+        display inline-block
+        vertical-align top
+        border 2px solid cShade3
+        border-radius(8px)
+        margin 1px 0
+
+    &__control
+        display inline-block
+        vertical-align top
+        width 160px
+        height 36px
+        color cShade2
+        font-family inherit
+        text-transform capitalize
+        background-color cWhite2
+        padding 10px
+        outline 0
+        border 0
+        border-left 5px solid transparent
+        border-radius(6px)
+
+        &.md-slider-horizontal
+            cursor pointer
+            width 265px
+
+    &__thumb
+        display inline-block
+        user-select(none)
+        color cGold3
+        text-shadow cShade2 1px 1px 0
+        width 46px
+        height 36px
+        padding 10px
+        box-shadow inset 0 0 0px 4px cShade6
+        background-color cShade5
+
+    &__command
+        margin 10px 0 0 0
+        padding 10px 0 0 0
+        border 0
+        border-top 2px solid cShade3
+
+    /* Angular2 form specific classes. */
+    .ng-valid[required], .ng-valid.required
+        border-left 10px solid cGreen1
+
+    .ng-invalid:not(form):not(fieldset)
+        border-left 10px solid cRed2

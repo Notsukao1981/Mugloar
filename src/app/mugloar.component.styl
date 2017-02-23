@@ -1,0 +1,69 @@
+@require "../assets/stylus/mugloar.styl"
+
+.layout
+    margin 0 auto
+    min-height 100%
+    width wLayoutMain
+    background-color rgba(cShade1, 0.8)
+    border 1px solid cShade1
+    box-shadow(bxshDefault)
+
+.header
+    padding 20px 0
+
+.title
+    padding 0
+    margin 10px 0
+    text-align center
+    letter-spacing 6px
+    font-family ffArcadeClassic
+    color cWhite1
+    text-shadow cWhite1 0 0 75px
+    mx-gradient-text-4(cBlue7 5%, cWhite1 45%, cRed7 55%, cGold1 95%)
+
+    &.-title_sub
+        mx-gradient-text-4(cBlue7 5%, cWhite1 45%, cViolet2 55%, cViolet3 70%)
+
+.content
+    padding 10px
+    position relative
+
+.footer
+    padding 20px
+    text-align center
+
+    &__text
+        font-size 20px
+        line-height 140%
+        font-family ffSortie
+        color fcCredits
+        mx-gradient-text-2(cGold1 45%, cGold4 75%)
+
+.contacts
+    color fcCredits
+    font-weight bold
+
+.disclaimer
+    text-align center
+    padding 35px
+    box-shadow inset 0 0 100px 50px cShade11
+    background repeating-linear-gradient(
+            120deg,
+            transparent,
+            transparent 4px,
+            cBlue5 6px,
+            transparent 8px /* The size of the gradient repeats by this size. */
+    )
+
+    &__background
+        display inline-block
+        padding 15px
+        background-color cBlue6
+        box-shadow 0 0 15px 3px rgba(cBlue7, 0.75)
+        border-radius(8px)
+
+    &__text
+        font-size 16px
+        line-height 150%
+        font-weight bold
+        mx-gradient-text-2(cRed3 35%, cPink1 65%)

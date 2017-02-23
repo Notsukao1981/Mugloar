@@ -1,0 +1,56 @@
+<div class="container">
+    <form class="dragon-form" #dragonForm="ngForm" novalidate (ngSubmit)="doSubmit(dragonForm)">
+        <div class="dragon-form__hint">
+            <p *ngIf="dragonForm.pristine">{{hintFormPristine}}</p>
+            <p *ngIf="dragonForm.dirty && dragonForm.valid">{{hintFormValid}}</p>
+            <p *ngIf="dragonName.invalid">{{hintNameInvalid}}</p>
+            <p *ngIf="dragonScore.invalid">{{hintScoreInvalid}}</p>
+        </div>
+        <fieldset class="dragon-form__group">
+            <!-- NAME -->
+            <label class="dragon-form__label" for="name">Name:</label>
+            <div class="dragon-form__control-wrap">
+                <input type="text" class="dragon-form__control" id="name" name="name" required maxlength="22" [(ngModel)]="dragonTrained.name" #dragonName="ngModel">
+            </div>
+            <!-- TITLE -->
+            <label class="dragon-form__label" for="title">Title:</label>
+            <div class="dragon-form__control-wrap">
+                <input type="text" class="dragon-form__control" id="title" name="title" maxlength="29" [(ngModel)]="dragonTrained.title">
+            </div>
+        </fieldset>
+        <fieldset class="dragon-form__group" ngModelGroup="score" #dragonScore="ngModelGroup">
+            <!-- SCORE: Claw Sharpness -->
+            <label class="dragon-form__label" for="clawSharpness" md-tooltip="Claw sharpness">Claws:</label>
+            <div class="dragon-form__control-wrap">
+                <md-slider class="dragon-form__control" id="clawSharpness" name="clawSharpness" required [(ngModel)]="dragonTrained.clawSharpness"
+                           min="{{SCORE_MIN}}" max="{{SCORE_MAX}}" mugloarValidateScore="scaleThickness,wingStrength,fireBreath"></md-slider>
+                <span class="dragon-form__thumb">{{dragonTrained.clawSharpness}}</span>
+            </div>
+            <!-- SCORE: Scale Thickness -->
+            <label class="dragon-form__label" for="scaleThickness" md-tooltip="Scale thickness">Scales:</label>
+            <div class="dragon-form__control-wrap">
+                <md-slider class="dragon-form__control" id="scaleThickness" name="scaleThickness" required [(ngModel)]="dragonTrained.scaleThickness"
+                           min="{{SCORE_MIN}}" max="{{SCORE_MAX}}" mugloarValidateScore="clawSharpness,wingStrength,fireBreath"></md-slider>
+                <span class="dragon-form__thumb">{{dragonTrained.scaleThickness}}</span>
+            </div>
+            <!-- SCORE: Wing Strength -->
+            <label class="dragon-form__label" for="wingStrength" md-tooltip="Wing strength">Wings:</label>
+            <div class="dragon-form__control-wrap">
+                <md-slider class="dragon-form__control" id="wingStrength" name="wingStrength" required [(ngModel)]="dragonTrained.wingStrength"
+                           min="{{SCORE_MIN}}" max="{{SCORE_MAX}}" mugloarValidateScore="clawSharpness,scaleThickness,fireBreath"></md-slider>
+                <span class="dragon-form__thumb">{{dragonTrained.wingStrength}}</span>
+            </div>
+            <!-- SCORE: Fire Breath -->
+            <label class="dragon-form__label" for="fireBreath" md-tooltip="Fire breath">Fire:</label>
+            <div class="dragon-form__control-wrap">
+                <md-slider class="dragon-form__control" id="fireBreath" name="fireBreath" required [(ngModel)]="dragonTrained.fireBreath"
+                           min="{{SCORE_MIN}}" max="{{SCORE_MAX}}" mugloarValidateScore="clawSharpness,scaleThickness,wingStrength"></md-slider>
+                <span class="dragon-form__thumb">{{dragonTrained.fireBreath}}</span>
+            </div>
+        </fieldset>
+        <div class="dragon-form__command">
+            <button md-raised-button color="primary" type="submit" class="button" [disabled]="dragonForm.form.invalid">Engage</button>
+            <button md-raised-button color="primary" type="button" class="button" [disabled]="dragonForm.form.pristine" (click)="doReset()">Reset</button>
+        </div>
+    </form>
+</div>

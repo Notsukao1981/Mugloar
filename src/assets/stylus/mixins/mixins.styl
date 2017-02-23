@@ -1,0 +1,113 @@
+border-radius(n)
+    -webkit-border-radius n
+    -moz-border-radius n
+    border-radius n
+
+border-bottom-left-radius(n)
+    -webkit-border-bottom-left-radius n
+    -moz-border-radius-bottomleft n
+    border-bottom-left-radius n
+
+border-bottom-right-radius(n)
+    -webkit-border-bottom-right-radius n
+    -moz-border-radius-bottomright n
+    border-bottom-right-radius n
+
+border-top-left-radius(n)
+    -webkit-border-top-left-radius n
+    -moz-border-radius-topleft n
+    border-top-left-radius n
+
+border-top-right-radius(n)
+    -webkit-border-top-right-radius n
+    -moz-border-radius-topright n
+    border-top-right-radius n
+
+box-sizing(n)
+    -moz-box-sizing n
+    -webkit-box-sizing n
+    box-sizing n
+
+user-select(n)
+    -webkit-touch-callout n
+    -webkit-user-select n
+    -khtml-user-select n
+    -moz-user-select n
+    -ms-user-select n
+    user-select n
+    pointer-events n
+
+box-shadow()
+    -webkit-box-shadow arguments
+    -moz-box-shadow arguments
+    box-shadow arguments
+
+placeholder-color(n)
+    &::-webkit-input-placeholder
+        color n
+    &:-moz-placeholder
+        color n
+        opacity 1
+    &::-moz-placeholder
+        color n
+        opacity 1
+    &:-ms-input-placeholder
+        color n
+
+text-size-adjust(n)
+    -ms-text-size-adjust n
+    -webkit-text-size-adjust n
+    text-size-adjust n
+
+appearance(n)
+    -webkit-appearance n
+    -moz-appearance n
+    appearance n
+
+transform(n)
+    -webkit-transform n
+    -moz-transform n
+    -ms-transform n
+    -o-transform n
+    transform n
+
+text-overflow(n)
+    -ms-text-overflow n
+    text-overflow n
+
+/* Set background to a double linear gradient (4 colors) with a fallback to background-color. */
+mx-background-linear-gradient-4(rotation, color1, color2, color3, color4)
+    background-color rgba(cShade3, 0.5)
+    background-image -webkit-linear-gradient(rotation, color1, color2, color3, color4)
+    background-image -moz-linear-gradient(rotation, color1, color2, color3, color4)
+    background-image -ms-linear-gradient(rotation, color1, color2, color3, color4)
+    background-image -o-linear-gradient(rotation, color1, color2, color3, color4)
+    background-image linear-gradient(rotation, color1, color2, color3, color4)
+
+/* Textual overflow convert to ellipsis. */
+mx-overflow2ellipsis()
+    white-space nowrap
+    text-overflow(ellipsis)
+    overflow hidden
+
+/* Gradient text with 2 colors (top -> down). Safe with old browsers (no artifacts). */
+mx-gradient-text-2(color1, color2)
+    background -webkit-linear-gradient(color1, color2)
+    -webkit-background-clip text
+    -webkit-text-fill-color transparent
+
+/* Gradient text with 4 colors (top -> down). Safe with old browsers (no artifacts). */
+mx-gradient-text-4(color1, color2, color3, color4)
+    background -webkit-linear-gradient(color1, color2, color3, color4)
+    -webkit-background-clip text
+    -webkit-text-fill-color transparent
+
+/* Slightly different behaviour and compatibility effects (artifacts) among older browsers. Best suited for Chrome only. Not used.*/
+mx-gradient-text-prototype(rotation, color1, color2, color3, color4)
+    background-image -webkit-linear-gradient(rotation, color1, color2, color3, color4)
+    background-image -moz-linear-gradient(rotation, color1, color2, color3, color4)
+    background-image -ms-linear-gradient(rotation, color1, color2, color3, color4)
+    background-image -o-linear-gradient(rotation, color1, color2, color3, color4)
+    background-image linear-gradient(rotation, color1, color2, color3, color4)
+    -webkit-background-clip text
+    -webkit-text-fill-color transparent

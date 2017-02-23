@@ -1,0 +1,50 @@
+<div class="wrapper" [@animationState]="animationState">
+    <h2 class="title">Game Over</h2>
+    <div class="legend">
+        <p class="legend__line">
+            <span class="legend__line__icon">
+                <md-icon class="icon" svgIcon="hasty-grave"></md-icon>
+            </span>
+            <span class="legend__line__text -text_emphasized">x&nbsp;{{knightsVanquishedCount}}</span>
+            <span class="legend__line__text">Knights vanquished</span>
+        </p>
+        <p class="legend__line">
+            <span class="legend__line__icon">
+                <md-icon class="icon" svgIcon="carrion"></md-icon>
+            </span>
+            <span class="legend__line__text -text_emphasized">x&nbsp;{{dragonsLostCount}}</span>
+            <span class="legend__line__text">Dragons lost</span>
+        </p>
+        <p class="legend__line">
+            <span class="legend__line__icon">
+                <md-icon class="icon" svgIcon="tombstone"></md-icon>
+            </span>
+            <span class="legend__line__text -text_emphasized">x&nbsp;{{princessesHarmedCount}}</span>
+            <span class="legend__line__text">Princesses harmed</span>
+        </p>
+        <p class="legend__line">
+            <span class="legend__line__icon">
+                <md-icon class="icon" svgIcon="skeleton"></md-icon>
+            </span>
+            <span class="legend__line__text -text_emphasized" md-tooltip="Exactly, nobody knows!">x&nbsp;?</span>
+            <span class="legend__line__text">Happy abyss denizens</span>
+        </p>
+    </div>
+    <div class="sandbox">
+        <md-icon class="icon -icon_skull" svgIcon="skull-crossed-bones"
+                 (@animationSpinningSlingshotInward.done)="animationSkullDone($event)"
+                 [@animationSpinningSlingshotInward]="'ready'"></md-icon>
+        <div *ngIf="startGraveShower">
+            <mugloar-abyss-grave *ngFor="let grave of graves" [graveIcon]="grave"></mugloar-abyss-grave>
+            <mugloar-abyss-ghost [enterFrom]="'left'"></mugloar-abyss-ghost>
+            <mugloar-abyss-ghost [enterFrom]="'right'"></mugloar-abyss-ghost>
+        </div>
+    </div>
+    <div class="controls-container">
+        <ul class="controls">
+            <li class="controls__item" md-tooltip="Insert coin to play again" routerLink="../intro">
+                <span class="controls__item__label">Please Insert Coin</span>
+            </li>
+        </ul>
+    </div>
+</div>

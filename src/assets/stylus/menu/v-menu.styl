@@ -1,0 +1,57 @@
+.v-menu
+    outline 0
+    padding 0
+    width wV-Menu
+    margin 0 auto
+    display block
+    text-align center
+    font-size 14px
+
+    &__header
+        display block
+        color fcV-MenuHeader
+        padding 10px
+        background-color cShade3
+        border-radius(8px)
+        border-bottom 2px solid cShade2
+        text-shadow rgba(cShade1, 0.1) -1px -1px 1px, rgba(cWhite1, 0.5) 1px 1px 1px
+
+    &__item
+        margin 0
+        padding 5px
+        display block
+        color fcV-MenuLabel
+
+        &.-item_active, &:hover
+            color fcV-MenuLabelHover
+
+            .widget__label
+                color fcV-MenuLabelHover
+
+        &.-item_disabled
+            color cShade5
+            user-select(none)
+
+        &__label
+            padding 10px
+            text-shadow 4px 4px 2px cShade2
+            mx-overflow2ellipsis()
+
+        &__widget
+            padding 4px 10px
+            display block
+
+        &__label, &__widget
+            margin 0
+            cursor pointer
+            position relative
+            text-transform capitalize
+
+            &:hover
+                &:before
+                    content: "\0027aa"
+                    position absolute
+                    left -20px
+                    top 7px
+                    z-index 1
+                    font-size 170%

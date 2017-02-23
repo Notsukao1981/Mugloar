@@ -1,0 +1,14 @@
+<div class="wrapper -wrapper_block" *ngIf="dragon">
+    <h2 class="title">Dragon</h2>
+    <md-icon class="icon" svgIcon="dragon-head_color" [attr.style]="sanitizedStyleColor(dragon.color.hex)" md-tooltip="{{dragon.color.name}}"></md-icon>
+    <div class="slider-container">
+        <md-slide-toggle class="widget" color="primary" [checked]="autoTraining" (change)="setTraining($event)">
+            <span class="widget__label" [ngSwitch]="autoTraining">Auto training:
+                <span class="widget__value" *ngSwitchCase="false">OFF</span>
+                <span class="widget__value" *ngSwitchDefault>ON</span>
+            </span>
+        </md-slide-toggle>
+    </div>
+    <mugloar-dragon-form *ngIf="!autoTraining" [dragonSummoned]="dragon" (confirm)="confirmed($event)"></mugloar-dragon-form>
+    <mugloar-dragon-preview *ngIf="autoTraining" [dragon]="dragon"></mugloar-dragon-preview>
+</div>

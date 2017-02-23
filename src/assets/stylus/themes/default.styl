@@ -1,0 +1,70 @@
+/*
+    This is a small custom tweak of the initial Angular2 Materials theme.
+    Refer here for official theming docs: https://github.com/angular/material2/blob/master/docs/theming.md
+    Currently there is no official support to thorough theme, therefore resort to direct style tweaks until this is not the case.
+*/
+body.body
+    .md-tooltip
+        font-size 12px
+        font-family ffPressStartK
+        color cShade2
+        height auto
+        margin 15px 0 0 0
+        padding 20px
+        border 2px solid cShade3
+        box-shadow inset 0 0 10px cWhite1, inset 0 0 20px cShade1
+        border-radius(16px)
+        background radial-gradient(circle at top left, cBlue2 15%, cWhite2)
+        text-shadow rgba(cShade1 0.1) -1px -1px 1px, rgba(cWhite1 0.5) 1px 1px 1px
+        text-transform capitalize
+        position relative
+
+        &:after, &:before
+            bottom 100%
+            left 50%
+            border solid transparent
+            content " "
+            height 0
+            width 0
+            position absolute
+            pointer-events none
+
+        &:after
+            border-color transparent
+            border-bottom-color cShade10
+            border-width 10px
+            margin-left -10px
+            box-shadow inset 0 0 20px cShade1
+
+        &:before
+            border-color transparent
+            border-bottom-color cShade3
+            border-width 13px
+            margin-left -13px
+
+    md-icon
+        height 100%
+        width 100%
+
+    .md-slide-toggle-content
+        color fcV-MenuLabel
+        font-size 14px
+        font-family ffPressStartK
+
+    .md-slider-horizontal
+        .md-slider-track
+            top 17px
+            left 18px
+            right 18px
+
+    .md-input-element
+        padding 10px 0
+
+    .md-input-placeholder
+        color cWhite3
+
+        &.md-empty
+            padding 10px 0 0 0
+
+    .md-hint
+        padding 10px

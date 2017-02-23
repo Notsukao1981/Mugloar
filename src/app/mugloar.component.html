@@ -1,0 +1,35 @@
+<div class="layout" [@animationState]="animationState">
+    <header class="header" [hidden]="isGameOver">
+        <h1 class="title">Mugloar</h1>
+        <h2 class="title -title_sub">In Retro Glory.</h2>
+        <div class="disclaimer">
+            <div class="disclaimer__background">
+                <div class="disclaimer__text">Disclaimer: Current version is best viewed in Chrome.</div>
+            </div>
+        </div>
+    </header>
+    <div class="content" role="main">
+        <router-outlet></router-outlet>
+    </div>
+    <footer id="mugloar-footer" class="footer" [hidden]="isGameOver">
+        <span class="footer__text">
+            &copy; Created by <a href="mailto:andrzej.kulakowski@gmail.com?Subject=Regarding%20Mugloar%20app" target="_top" rel="author" class="contacts">Andrzej Kułakowski</a>, 2017.
+        </span>
+        <br>
+        <span class="footer__text">
+            Introduction background art by <a href="http://stavaey.deviantart.com" target="_blank" rel="author" class="contacts">StavaEY</a>
+        </span>
+        <br>
+        <span class="footer__text">
+            Game background art by <a href="https://www.reddit.com/user/skeddles" target="_blank" rel="author" class="contacts">Skeddles</a>
+        </span>
+        <br>
+        <span class="footer__text">
+            Icons by great people over at <a href="http://game-icons.net" rel="author" target="_blank" class="contacts">http://game-icons.net</a>
+        </span>
+        <br>
+        <span class="footer__text">
+            &reg;&nbsp;All Rights Reserved.
+        </span>
+    </footer>
+</div>

@@ -1,0 +1,26 @@
+@require "../../../../../assets/stylus/mugloar.styl"
+
+.name
+    margin 10px 0
+    padding 10px
+    color cWhite3
+    font-size 14px
+    line-height 16px
+    width 100%
+    mx-overflow2ellipsis()
+    overflow-y auto
+    text-align center
+    text-shadow cShade1 1px 1px 3px
+    background linear-gradient(180deg, cShade9 10%, rgb(148, 83, 67) 65%, cShade4 100%)
+    border 4px solid rgba(56, 24, 18, 0.5)
+    border-radius(8px)
+
+.attributes
+    color cWhite2
+
+/*
+    Take advantage of Angular2 specific trick: instruct Dragon's attribute name's width to be exact as we want,
+    because the dragon already knows how long his labels can be ;)
+*/
+:host >>> mugloar-attribute-name .name
+    width 100px

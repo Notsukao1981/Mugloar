@@ -1,0 +1,42 @@
+<div class="wrapper" [@animationState]="animationState">
+    <mugloar-progress-cycle></mugloar-progress-cycle>
+    <mugloar-feedback></mugloar-feedback>
+    <div class="art-wrapper">
+        <img class="art" src="../../../assets/images/main_bg.png" alt="game background art"/>
+    </div>
+    <mugloar-status class="block" [hidden]="!finished" [status]="status" [@animationSlideFromLeft]="animateFlag"></mugloar-status>
+    <div class="block" [ngClass]="{'-block_centered': !finished}" [@animationPhaseIn]="animateControlsFlag">
+        <div class="controls-container">
+            <div class="feedback -feedback_error" [hidden]="controlGamesCount.validity.valid">
+                <span class="feedback__text -text_emphasized">Dragon Lair:</span>
+                <span class="feedback__text">Nope.</span>
+            </div>
+            <md-input-container dividerColor="accent" class="input-container" [hidden]="finished">
+                <input md-input class="input-container__input"
+                       type="number"
+                       placeholder="How many games?"
+                       min="1"
+                       max="{{gamesMax}}"
+                       maxlength="3"
+                       [(ngModel)]="gamesCount"
+                       (change)="onChangeGamesCount()"
+                       #controlGamesCount>
+                <span md-prefix>#&nbsp;</span>
+                <span md-suffix>&nbsp;games</span>
+                <md-hint class="input-container__hint" align="end">Limit: {{controlGamesCount.max}}</md-hint>
+            </md-input-container>
+            <ul class="controls">
+                <li class="controls__item" [md-tooltip]="getTip('play')" (click)="doAutoPlay()" [ngClass]="{'-item_disabled': !controlGamesCount.validity.valid}" *ngIf="!finished">
+                    <span class="controls__item__label">Auto-Play {{gamesCountText}} games</span>
+                </li>
+                <li class="controls__item" [md-tooltip]="getTip('restart')" (click)="doRestart()" *ngIf="finished">
+                    <span class="controls__item__label">Restart</span>
+                </li>
+                <li class="controls__item" [md-tooltip]="getTip('quit')" (click)="doQuit()">
+                    <span class="controls__item__label">Quit</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <mugloar-chronicle class="block -block_expanded" [hidden]="!finished" [@animationSlideFromRight]="animateFlag"></mugloar-chronicle>
+</div>

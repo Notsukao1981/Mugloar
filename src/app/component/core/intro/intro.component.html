@@ -1,0 +1,40 @@
+<div class="wrapper" [@animationState]="animationState">
+    <img class="art" src="../../../assets/images/intro_bg.png" alt="mugloar intro background" md-tooltip="Sometimes, oppressor of tranquility is not that obvious."/>
+    <div class="intro">
+        <hr size="1">
+        <p>
+            Hello and welcome to your new job as Head of Dragon Resources Management of the ancient kingdom of Mugloar!
+        </p>
+        <hr size="1">
+        <p>
+            Every day knights take on brave, and frankly quite self-destructive, journeys to conquer our kingdom.
+            This might be because of the rumours of indescribably gorgeous princesses we started when we were bored.
+        </p>
+        <hr size="1">
+        <p>
+            Anyway, the relentless princess-snatching, dragon-slaying, tincan-dressed nuisances need to be stopped.
+            The stopping needs to be done effectively, which means we are going to have to use dragons.
+            Studies by our kingdom’s top scientists show that dragons are the most efficient method to get rid of knights
+            (and everything else except Drakie-Darling dragon treats with spinach).
+        </p>
+        <hr size="1">
+        <p>
+            With great efficiency comes great cost however, dragons are not cheap pets,
+            especially given their intense dislike towards roasted spinach dragon treats, which your predecessor on the job already ordered a 3 year supply of.
+            The dragons enjoyed him a lot more than the treats mentioned before.
+            To make up for the mistake of proposing vegetarian habits to dragons and to keep our pet keeping costs in check,
+            your task is to have a consistent dragon survival rate of at least 50%.
+        </p>
+        <hr size="1">
+    </div>
+    <div class="controls-container">
+        <ul class="controls">
+            <li class="controls__item" md-tooltip="Start a new session to play a set of games automatically" routerLink="../game" routerLinkActive="-item_active">
+                <span class="controls__item__label">Automatic Game</span>
+            </li>
+            <li class="controls__item" md-tooltip="Start a new practice game to play manually" routerLink="../practice" routerLinkActive="-item_active">
+                <span class="controls__item__label">Manual Game</span>
+            </li>
+        </ul>
+    </div>
+</div>

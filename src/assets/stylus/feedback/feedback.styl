@@ -1,0 +1,63 @@
+.feedback
+    display block
+    position relative
+    padding 40px 80px 40px 100px
+    margin 0 0 20px 0
+    min-height 120px
+    color cWhite2
+    font-size 14px
+    z-index 1
+    border 2px solid cGreen1
+    box-shadow 0 0 2px 2px cShade2, inset 0 0 10px cWhite1, inset 0 0 20px cShade1
+    border-radius(8px)
+    background cGreen1
+
+    &.-feedback_warning
+        background cOrange2
+        border-color cOrange2
+
+    &.-feedback_error
+        background cRed4
+        border-color cRed4
+
+    &__text
+        margin 0
+        color inherit
+        font-size inherit
+        font-family ffPressStartK
+        line-height 150%
+        word-break break-word
+        white-space pre-wrap
+
+        &.-text_emphasized
+            font-weight bold
+
+    &__icon
+        font-size inherit
+        width 60px
+        height 60px
+        position absolute
+        top 30px
+        padding 0
+        color cWhite2
+
+        &.-icon_right
+            right 20px
+
+        &.-icon_left
+            left 20px
+
+        &.-icon_clickable
+            padding 15px
+            border 2px solid cWhite2
+            border-radius(50%)
+            cursor pointer
+
+            &:hover
+                color cWhite1
+                box-shadow 0 0 15px 1px cWhite1
+
+            &:active
+                color cWhite3
+                box-shadow inset 0 0 10px cWhite3
+                border-color cWhite3

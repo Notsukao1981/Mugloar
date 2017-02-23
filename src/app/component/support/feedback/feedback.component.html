@@ -1,0 +1,15 @@
+<div class="feedback" *ngIf="showNotification" [@animationSpawnIn]="showNotification">
+    <pre class="feedback__text">{{notificationMessage}}</pre>
+    <md-icon class="feedback__icon -icon_left" svgIcon="vertical-banner"></md-icon>
+    <md-icon class="feedback__icon -icon_right -icon_clickable" svgIcon="unlit-bomb" md-tooltip="Ok, dismiss it." (click)="clickDismiss('notification')"></md-icon>
+</div>
+<div class="feedback -feedback_warning" *ngIf="showWarning" [@animationSpawnIn]="showNotification">
+    <pre class="feedback__text">{{warningMessage}}</pre>
+    <md-icon class="feedback__icon -icon_left" svgIcon="ghost"></md-icon>
+    <md-icon class="feedback__icon -icon_right -icon_clickable" svgIcon="unlit-bomb" md-tooltip="Ok, dismiss it." (click)="clickDismiss('warning')"></md-icon>
+</div>
+<div class="feedback -feedback_error" *ngIf="showError" [@animationSpawnIn]="showNotification">
+    <pre class="feedback__text">{{errorMessage}}</pre>
+    <md-icon class="feedback__icon -icon_left" svgIcon="dead-head"></md-icon>
+    <md-icon class="feedback__icon -icon_right -icon_clickable" svgIcon="unlit-bomb" md-tooltip="Ok, dismiss it." (click)="clickDismiss('error')"></md-icon>
+</div>

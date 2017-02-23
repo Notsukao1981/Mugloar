@@ -1,0 +1,9 @@
+<div class="attribute">
+    <mugloar-attribute-name [name]="attribute.name" [tooltip]="attribute.tooltip"></mugloar-attribute-name>
+    <span class="score" md-tooltip="{{attribute.score}}">
+        <span *ngFor="let token of tokens; let i = index;" class="token"
+              [ngClass]="{'-token_rare': isTokenRare(i), '-token_epic': isTokenEpic(i), '-token_missing': isTokenMissing(i)}">
+            <md-icon svgIcon="{{attribute.icon}}"></md-icon>
+        </span>
+    </span>
+</div>

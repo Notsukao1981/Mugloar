@@ -1,0 +1,24 @@
+<div class="wrapper" [@animationState]="animationState">
+    <mugloar-progress-spinner></mugloar-progress-spinner>
+    <mugloar-feedback></mugloar-feedback>
+    <mugloar-status class="block" *ngIf="game" [status]="status" [@animationSlideFromLeft]="animateFlag"></mugloar-status>
+    <div class="block" [ngClass]="{'-block_centered': !game}">
+        <div class="controls-container">
+            <ul class="controls">
+                <li class="controls__item" [md-tooltip]="getTip('dragon')" (click)="doDispatchDragon()" *ngIf="game?.dragon">
+                    <span class="controls__item__label">Dispatch {{game.dragon.name}}</span>
+                </li>
+                <li class="controls__item" [md-tooltip]="getTip('restart')" (click)="doRestart()">
+                    <span class="controls__item__label">Restart</span>
+                </li>
+                <li class="controls__item" [md-tooltip]="getTip('quit')" (click)="doQuit()">
+                    <span class="controls__item__label">Quit</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <mugloar-weather class="block -block_expanded" *ngIf="game" [weather]="game.weather" [@animationSlideFromLeft]="animateFlag"></mugloar-weather>
+    <mugloar-knight class="block" *ngIf="game" [knight]="game.knight" [@animationSlideFromLeft]="animateFlag"></mugloar-knight>
+    <mugloar-dragon class="block" *ngIf="game" [dragon]="game.dragon" (confirmDispatch)="doDispatchDragon()" [@animationSlideFromRight]="animateFlag"></mugloar-dragon>
+    <mugloar-chronicle class="block -block_expanded" *ngIf="game" [@animationSlideFromLeft]="animateFlag"></mugloar-chronicle>
+</div>

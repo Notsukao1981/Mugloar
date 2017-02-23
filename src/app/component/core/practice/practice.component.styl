@@ -1,0 +1,39 @@
+@require "../../../../assets/stylus/mugloar.styl"
+@require "../../../../assets/stylus/menu/v-menu.styl"
+@require "../../../../assets/stylus/layout/wrapper.styl"
+@require "../../../../assets/stylus/feedback/feedback.styl"
+
+.wrapper
+    font-size 0
+    /*background url("../../../assets/images/intro_bg.png") center center / 100% auto no-repeat no-repeat*/
+    border 1px solid cShade3
+    border-radius(8px)
+
+.controls-container
+    @extend .wrapper.-wrapper_block
+    margin 20px
+    padding 20px
+    text-align center
+    vertical-align top
+    border 2px solid cShade3
+    border-radius(8px)
+
+.controls
+    @extends .v-menu
+    font-size 14px
+    line-height 150%
+
+.block
+    display inline-block
+    font-size 14px
+    padding 0
+    width 50%
+    vertical-align top
+
+    &.-block_centered
+        display block
+        margin 0 auto
+
+    &.-block_expanded
+        display block
+        width 100%

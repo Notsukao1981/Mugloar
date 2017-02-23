@@ -1,0 +1,54 @@
+/*
+    Custom table stub that allows to control its body overflow (body becomes scrollable, whereas header & footer remain fixed).
+    Upon initializing override table's height to set that its body knows how to handle overflow.
+*/
+
+.table
+    height auto
+
+    &__head
+        padding 0
+        display table
+        width calc( 100% - 1em ) // Adjust header width to compensate body's scroll width.
+        table-layout fixed // Make columns width even, fixes table width too.
+
+        &__row
+            padding 0
+
+            &__cell
+                padding 0
+                text-align center
+                text-decoration underline
+                font-size 125%
+
+                &.-cell_text_left
+                    text-align left
+
+    &__body
+        padding 0
+        display block
+        overflow-y auto
+        height inherit  // Inherits height from the table.
+
+        &__row
+            padding 0
+            display table
+            width 100%
+            table-layout fixed
+
+            &__cell
+                padding 0
+                vertical-align top
+
+                &.-cell_text_centered
+                    text-align center
+
+    &__foot
+        padding 0
+
+        &__row
+            padding 0
+
+            &__cell
+                padding 0
+                text-align center

@@ -1,0 +1,8 @@
+<div class="wrapper -wrapper_block" *ngIf="knight">
+    <h2 class="title">Knight</h2>
+    <md-icon class="icon" svgIcon="mounted-knight"></md-icon>
+    <h3 class="name" md-tooltip="{{knight.name}}">{{knight.name}}</h3>
+    <div class="attributes">
+        <mugloar-attribute *ngFor="let attribute of attributes" [attribute]="attribute"></mugloar-attribute>
+    </div>
+</div>

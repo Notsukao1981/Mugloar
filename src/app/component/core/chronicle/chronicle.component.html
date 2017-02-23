@@ -1,0 +1,100 @@
+<div class="wrapper -wrapper_block">
+    <header class="header">
+        <h2 class="title">Engagement Chronicles</h2>
+        <div class="controls" *ngIf="!empty">
+            <button class="button-circle" md-tooltip="Expand chronicles vertically to suit readability" md-icon-button (click)="expandChronicles()" [hidden]="isExpanded">
+                <md-icon class="button-circle__icon" svgIcon="scroll-unfurled">Expand chronicle list</md-icon>
+            </button>
+            <button class="button-circle" md-tooltip="Collapse chronicles vertically for compactness" md-icon-button (click)="collapseChronicles()" [hidden]="isCollapsed">
+                <md-icon class="button-circle__icon" svgIcon="stabbed-note">Collapse chronicle list</md-icon>
+            </button>
+            <button class="button-circle" md-tooltip="Export the chronicles data in a textual format" md-icon-button (click)="exportChronicles()">
+                <md-icon class="button-circle__icon" svgIcon="quill-ink">Export</md-icon>
+            </button>
+            <button class="button-circle" md-tooltip="Flush all the chronicles logged" md-icon-button (click)="flushChronicles()">
+                <md-icon class="button-circle__icon" svgIcon="burning-book">Flush</md-icon>
+            </button>
+        </div>
+    </header>
+    <div class="peace" [hidden]="!empty">
+        <md-icon class="peace__icon" svgIcon="tree-face"></md-icon>
+        <div class="peace__text">No engagements, so peaceful, so much woaw.</div>
+    </div>
+    <table class="engagements" [class.-expanded]="isExpanded" [hidden]="empty">
+        <thead class="engagements__head">
+            <tr class="engagements__head__row">
+                <th class="engagements__head__row__cell -cell_text_left -cell_nr">#</th>
+                <th class="engagements__head__row__cell -cell_text_left -cell_knight">Knight</th>
+                <th class="engagements__head__row__cell -cell_tight">Outcome</th>
+                <th class="engagements__head__row__cell -cell_dragon">Dragon</th>
+                <th class="engagements__head__row__cell -cell_tight">Weather</th>
+                <th class="engagements__head__row__cell -cell_text_left">What happened?</th>
+            </tr>
+        </thead>
+        <tbody class="engagements__body">
+            <tr class="engagements__body__row" *ngFor="let chronicle of chronicles | async; let nr = index;">
+                <td class="engagements__body__row__cell -cell_text_left -cell_nr" md-tooltip="Id: {{chronicle.id}}">{{nr + 1}}.</td>
+                <td class="engagements__body__row__cell -cell_text_left -cell_knight">
+                    <div class="knight">
+                        <div class="name">{{chronicle.knight.name}}</div>
+                        <div class="attributes">
+                            <mugloar-chronicle-attribute class="attribute" [name]="'Attack'" [score]="chronicle.knight.attack" [icon]="'crossed-swords'"></mugloar-chronicle-attribute>
+                            <mugloar-chronicle-attribute class="attribute" [name]="'Armor'" [score]="chronicle.knight.armor" [icon]="'shield'"></mugloar-chronicle-attribute>
+                            <mugloar-chronicle-attribute class="attribute" [name]="'Agility'" [score]="chronicle.knight.agility" [icon]="'walking-boot'"></mugloar-chronicle-attribute>
+                            <mugloar-chronicle-attribute class="attribute" [name]="'Endurance'" [score]="chronicle.knight.endurance" [icon]="'heart-beats'"></mugloar-chronicle-attribute>
+                        </div>
+                    </div>
+                </td>
+                <td class="engagements__body__row__cell -cell_text_centered -cell_tight">
+                    <div class="feedback-status" md-tooltip="{{chronicle.engagement.status}}" [ngSwitch]="chronicle.engagement.status">
+                        <md-icon svgIcon="skull-crossed-bones" *ngSwitchCase="'Victory'"></md-icon>
+                        <md-icon svgIcon="dragon-head" *ngSwitchCase="'Defeat'"></md-icon>
+                        <md-icon svgIcon="tombstone" *ngSwitchDefault></md-icon>
+                    </div>
+                </td>
+                <td class="engagements__body__row__cell -cell_text_centered -cell_dragon">
+                    <div class="dragon">
+                        <div class="name">{{chronicle.dragon.name}}</div>
+                        <div class="attributes">
+                            <mugloar-chronicle-attribute class="attribute" [name]="'Claw sharpness'" [score]="chronicle.dragon.clawSharpness" [icon]="'claw'"></mugloar-chronicle-attribute>
+                            <mugloar-chronicle-attribute class="attribute" [name]="'Scale thickness'" [score]="chronicle.dragon.scaleThickness" [icon]="'scales'"></mugloar-chronicle-attribute>
+                            <mugloar-chronicle-attribute class="attribute" [name]="'Wing strength'" [score]="chronicle.dragon.wingStrength" [icon]="'wing'"></mugloar-chronicle-attribute>
+                            <mugloar-chronicle-attribute class="attribute" [name]="'Fire breath'" [score]="chronicle.dragon.fireBreath" [icon]="'dragon-breath'"></mugloar-chronicle-attribute>
+                        </div>
+                    </div>
+                </td>
+                <td class="engagements__body__row__cell -cell_text_centered -cell_tight">
+                    <div class="weather" md-tooltip="{{chronicle.weather.code}}" [ngSwitch]="chronicle.weather.code">
+                        <md-icon svgIcon="hot-surface" *ngSwitchCase="WeatherTypeLongDry"></md-icon>
+                        <md-icon svgIcon="lightning-storm" *ngSwitchCase="WeatherTypeLightningStorm"></md-icon>
+                        <md-icon svgIcon="dust-cloud" *ngSwitchCase="WeatherTypeFog"></md-icon>
+                        <md-icon svgIcon="raining" *ngSwitchCase="WeatherTypeHeavyRain"></md-icon>
+                        <md-icon svgIcon="sun" *ngSwitchDefault></md-icon>
+                    </div>
+                </td>
+                <td class="engagements__body__row__cell -cell_text_left">
+                    <div class="feedback-message">{{chronicle.engagement.message}}</div>
+                </td>
+            </tr>
+        </tbody>
+        <tfoot class="engagements__foot">
+            <tr class="engagements__foot__row">
+                <td colspan="6" class="engagements__foot__row__cell">
+                    <md-icon svgIcon="folded-paper" class="summary-icon"></md-icon>
+                    Weather breakdown:
+                    <md-icon svgIcon="sun" class="summary-icon -icon_tiny" md-tooltip="{{WeatherTypeNormal}}"></md-icon>: {{summary.weather.normal}}
+                    <md-icon svgIcon="raining" class="summary-icon -icon_tiny" md-tooltip="{{WeatherTypeHeavyRain}}"></md-icon>: {{summary.weather.heavy_rain}}
+                    <md-icon svgIcon="dust-cloud" class="summary-icon -icon_tiny" md-tooltip="{{WeatherTypeFog}}"></md-icon>: {{summary.weather.fog}}
+                    <md-icon svgIcon="lightning-storm" class="summary-icon -icon_tiny" md-tooltip="{{WeatherTypeLightningStorm}}"></md-icon>: {{summary.weather.storm}}
+                    <md-icon svgIcon="hot-surface" class="summary-icon -icon_tiny" md-tooltip="{{WeatherTypeLongDry}}"></md-icon>: {{summary.weather.long_dry}}
+                </td>
+            </tr>
+            <tr class="engagements__foot__row">
+                <td colspan="6" class="engagements__foot__row__cell">
+                    <md-icon svgIcon="candle-skull" class="summary-icon"></md-icon>
+                    Total: {{summary.total}}, Defeats: {{summary.defeats}}, Wins: {{summary.wins}}
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+</div>

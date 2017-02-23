@@ -1,0 +1,72 @@
+/*
+    Set default base styling.
+    Note: Due to Angular2 dynamic component use - do not set any custom loaded font families here, that are used to style dynamic components.
+    'Traditional measures' [1] to handle "FOIT" do not fully solve the issue when dynamic Angular2 components are used with Chrome.
+    TLDR: Dynamic component should apply custom font families in their corresponding styles.
+
+    [1]: https://www.filamentgroup.com/lab/font-events.html
+*/
+
+html
+    margin 0
+    padding 0
+    height 100%
+
+body
+    margin 0
+    height 100%
+    font-family ffPressStartK
+    font-size fsDefault
+    color fcMain
+    background-color cMainBg
+
+*
+    box-sizing(border-box)
+
+input, select, textarea, button
+    outline none
+
+h1
+    font-size fsTitle1
+
+h2
+    font-size fsTitle2
+
+h3
+    font-size fsTitle3
+
+h4
+    font-size fsTitle4
+
+h5
+    font-size fsTitle5
+
+a
+    text-decoration none
+    outline none
+    cursor pointer
+
+a:hover
+    text-decoration underline
+
+
+/* Class default properties: */
+.link
+    text-transform capitalize
+
+    &.-link_disabled
+        pointer-events none
+        cursor default
+
+.title
+    margin 0
+    padding 0
+    font-family ffArcadeClassic
+    line-height 120%
+    letter-spacing 6px
+    color cWhite1
+    text-shadow cWhite1 0 0 10px
+
+/* Imperatively enforce hidden, because Angular2 Material Design styles otherwise overcome it. */
+[hidden]
+    display none !important

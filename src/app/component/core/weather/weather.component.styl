@@ -1,0 +1,56 @@
+@require "../../../../assets/stylus/mugloar.styl"
+@require "../../../../assets/stylus/layout/wrapper.styl"
+
+.wrapper
+    &.-wrapper_normal
+        background radial-gradient(circle at top left, rgba(cBlue3, 0.8) 20%, rgba(cShade3, 0.3))
+
+    &.-wrapper_storm
+        background radial-gradient(circle at top right, rgba(cBlue5, 0.8) 20%, cBlue4);
+
+    &.-wrapper_rain
+        background linear-gradient(
+            180deg,
+            rgba(cBlue6, 0.8) 25%,
+            rgba(cBlue7, 0.4),
+            rgba(cShade1, 0.8) 90%
+        );
+
+    &.-wrapper_dry
+        background radial-gradient(circle at top left, rgba(cRed4, 0.8) 20%, rgba(cShade3, 0.3))
+
+    &.-wrapper_fog
+        background radial-gradient(circle at top right, rgba(cRed5, 0.8) 20%, rgba(cWhite5, 0.3))
+
+.row
+    padding 5px 125px 5px 0
+
+    &.-row_no_constraint
+        padding 5px 0
+
+    &__label
+        padding 0
+        color cWhite2
+
+    &__value
+        padding 0
+        color cWhite3
+
+        &.-value_message
+            margin 0
+            padding 0
+            max-height 150px
+            overflow auto
+            white-space pre-wrap
+            font-size 14px
+            line-height 150%
+            font-family ffPressStartK
+
+.icon
+    padding 10px
+    width 125px
+    height 125px
+    display block
+    position absolute
+    right 0
+    top 0

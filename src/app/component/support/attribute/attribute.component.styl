@@ -1,0 +1,33 @@
+@require "../../../../assets/stylus/mugloar.styl"
+
+.attribute
+    display block
+    padding 2px 0
+    line-height 100%
+
+.score
+    padding 2px
+    border 2px solid cWhite2
+    box-shadow 0 0 1px 1px cShade1, inset 0 0 1px 1px cShade1
+    background-color cShade2
+    border-radius(4px)
+    display inline-block
+    width auto
+
+.token
+    display inline-block
+    width 30px
+    height 30px
+    color cGold2
+    text-shadow cWhite1 1px 1px 0
+    background-color cShade3
+    border 2px solid cShade2
+
+    &.-token_rare
+        color cGold6
+
+    &.-token_epic
+        color cOrange6
+
+    &.-token_missing
+        color cShade4

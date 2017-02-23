@@ -1,0 +1,21 @@
+<div class="wrapper -wrapper_block" *ngIf="weather" [ngClass]="{'-wrapper_normal': normal, '-wrapper_storm': storm, '-wrapper_rain': rain, '-wrapper_dry': dry, '-wrapper_fog': fog}">
+    <h2 class="title">Weather</h2>
+    <md-icon class="icon" svgIcon="{{icon}}"></md-icon>
+    <div class="row">
+        <span class="row__label">Generated:</span>
+        <span class="row__value">{{weather.time | date:'y.M.d H:mm:ss'}}</span>
+    </div>
+    <div class="row">
+        <span class="row__label">Coordinates:</span>
+        <span class="row__value">{{coordinates}}</span>
+    </div>
+    <div class="row">
+        <span class="row__label">Code:</span>
+        <span class="row__value">{{weather.code}}</span>
+        <span class="row__label">X-Rating:</span>
+        <span class="row__value">{{rating}}</span>
+    </div>
+    <div class="row -row_no_constraint">
+        <pre class="row__value -value_message">{{weather.message}}</pre>
+    </div>
+</div>

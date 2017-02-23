@@ -1,0 +1,110 @@
+@require "../../../../assets/stylus/mugloar.styl"
+@require "../../../../assets/stylus/layout/wrapper.styl"
+@require "../../../../assets/stylus/table/table.styl"
+@require "../../../../assets/stylus/button/button-circle.styl"
+
+/* Load component specific font: */
+setup-font-face("BlackwoodCastle", "blackwood_castle")
+
+.wrapper
+    &.-wrapper_block
+        background rgba(cBrown1, 0.7)
+
+.header
+    position relative
+
+.title
+    color cBrown3
+    max-width 80%
+    line-height 150%
+
+.controls
+    top 0
+    right 0
+    position absolute
+    max-width 20%
+
+.peace
+    user-select(none)
+    padding 40px 20px
+
+    &__icon
+        height 100px
+        width 25%
+        display inline-block
+        color cOrange3
+        vertical-align middle
+
+    &__text
+        display inline-block
+        font-size 16px
+        line-height: 150%
+        color cShade3
+
+.col
+    display block
+    width 100px
+    height 100px
+
+.engagements
+    margin 0
+    padding 10px 0
+    width 100%
+    height hConsole
+    overflow auto
+    white-space normal
+    color cShade1
+    font-size 20px
+    font-family ffBlackwoodCastle
+    line-height 120%
+
+    @extends .table
+
+    &.-expanded
+        height auto
+
+    .-cell_nr
+        width 40px
+        mx-overflow2ellipsis()
+
+    .-cell_knight
+        width 220px
+
+    .-cell_dragon
+        width 180px
+
+    .-cell_tight
+        width 90px
+
+    &__foot
+        background radial-gradient(circle, rgba(cBrown2, 0.35) 15%, transparent)
+
+        &__row__cell
+            padding 10px
+
+.feedback-status
+    height 24px
+    display block
+
+.attributes
+    font-size 0
+    width 160px
+    display block
+    margin 0 auto
+
+.attribute
+    display inline-block
+    width 40px
+
+.weather
+    height 24px
+    display block
+
+.summary-icon
+    width 55px
+    height 55px
+    display inline-block
+    vertical-align middle
+
+    &.-icon_tiny
+        transform scale(0.5)

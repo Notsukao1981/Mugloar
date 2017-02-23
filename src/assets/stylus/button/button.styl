@@ -1,0 +1,31 @@
+.button
+    padding 10px 15px
+    font-family ffPressStartK
+    font-size fsButton
+    text-transform uppercase
+    color fcButton
+    background-color cButtonBg
+    border-top 8px solid cShade5
+    border-right 8px solid cShade3
+    border-bottom 8px solid cShade2
+    border-left 8px solid cShade4
+    border-radius(2px)
+    box-shadow inset 2px 2px 0 cShade7, inset -2px -2px 0 cShade1
+
+    &[disabled]
+        cursor not-allowed
+        background-color cButtonDisabledBg
+        text-shadow cShade7 4px 3px 2px
+
+    &:hover:not([disabled])
+        color cOrange1
+        text-shadow cShade3 3px 2px 4px
+        box-shadow 0 0 10px 3px cOrange1
+
+    &:active:not([disabled])
+        border-color cButtonBg
+        background cButtonBg
+
+
+    &.-button_hidden
+        display none !important

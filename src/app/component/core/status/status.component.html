@@ -1,0 +1,22 @@
+<div class="wrapper -wrapper_block" *ngIf="status">
+    <div class="status">
+        <div class="status__row">
+            <span class="status__row__label">Games played:</span>
+            <span class="status__row__value">{{status.played}} / {{status.toBePlayed}}</span>
+        </div>
+        <div class="status__row">
+            <span class="status__row__label">Games won:</span>
+            <span class="status__row__value">{{status.won}} / {{status.played}}, {{winRatio}}%</span>
+        </div>
+        <div class="status__row" *ngIf="status.failed">
+            <span class="status__row__label">Games failed:</span>
+            <span class="status__row__value">{{status.failed}} / {{status.toBePlayed}}</span>
+        </div>
+        <div class="status__row">
+            <span class="status__row__label">State of affairs:</span>
+        </div>
+        <div class="status__row" *ngFor="let message of status.msg">
+            <span class="status__row__value">{{message}}</span>
+        </div>
+    </div>
+</div>

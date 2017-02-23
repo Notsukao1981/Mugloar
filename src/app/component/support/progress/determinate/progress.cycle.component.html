@@ -1,0 +1,12 @@
+<div class="background-layer" *ngIf="showProgress" [@animationFadeInFadeOut]="animationFadeInFadeOut">
+    <div class="container">
+        <div class="progress">
+            <div class="progress__counter">
+                <span class="progress__counter__value" [class.-value_emphasize]="isEmphasized">{{getCurrent}}</span>
+                <span class="progress__counter__value">&nbsp;of&nbsp;</span>
+                <span class="progress__counter__value" [class.-value_emphasize]="isEmphasized">{{getTotal}}</span>
+            </div>
+            <md-progress-spinner class="progress__icon" mode="determinate" value="{{getProgressValue}}" color="primary"></md-progress-spinner>
+        </div>
+    </div>
+</div>
