@@ -3,11 +3,11 @@
     https://www.materialui.co/colors
 */
 @import '~@angular/material/core/theming/all-theme';
-@include md-core();
-$primary: md-palette($md-grey);
-$accent:  md-palette($md-deep-purple, 50, A100, A400);
-$warn:    md-palette($md-red, 600);
-$theme: md-light-theme($primary, $accent, $warn);
+@include mat-core();
+$primary: mat-palette($mat-grey);
+$accent:  mat-palette($mat-deep-purple, 50, A100, A400);
+$warn:    mat-palette($mat-red, 600);
+$theme: mat-light-theme($primary, $accent, $warn);
 @include angular-material-theme($theme);
 
 /*

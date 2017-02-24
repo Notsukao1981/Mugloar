@@ -2,7 +2,7 @@
     <mugloar-progress-cycle></mugloar-progress-cycle>
     <mugloar-feedback></mugloar-feedback>
     <div class="art-wrapper">
-        <img class="art" src="../../../assets/images/main_bg.png" alt="game background art"/>
+        <img class="art" src="../../../../assets/images/main_bg.png" alt="game background art"/>
     </div>
     <mugloar-status class="block" [hidden]="!finished" [status]="status" [@animationSlideFromLeft]="animateFlag"></mugloar-status>
     <div class="block" [ngClass]="{'-block_centered': !finished}" [@animationPhaseIn]="animateControlsFlag">
@@ -12,7 +12,7 @@
                 <span class="feedback__text">Nope.</span>
             </div>
             <md-input-container dividerColor="accent" class="input-container" [hidden]="finished">
-                <input md-input class="input-container__input"
+                <input mdInput class="input-container__input"
                        type="number"
                        placeholder="How many games?"
                        min="1"
@@ -21,8 +21,8 @@
                        [(ngModel)]="gamesCount"
                        (change)="onChangeGamesCount()"
                        #controlGamesCount>
-                <span md-prefix>#&nbsp;</span>
-                <span md-suffix>&nbsp;games</span>
+                <span mdPrefix>#&nbsp;</span>
+                <span mdSuffix>&nbsp;games</span>
                 <md-hint class="input-container__hint" align="end">Limit: {{controlGamesCount.max}}</md-hint>
             </md-input-container>
             <ul class="controls">
