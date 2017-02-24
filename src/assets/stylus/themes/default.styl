@@ -4,8 +4,9 @@
     Currently there is no official support to thorough theme, therefore resort to direct style tweaks until this is not the case.
 */
 body.body
-    .md-tooltip
+    .mat-tooltip
         font-size 12px
+        line-height 140%
         font-family ffPressStartK
         color cShade2
         height auto
@@ -16,8 +17,8 @@ body.body
         border-radius(16px)
         background radial-gradient(circle at top left, cBlue2 15%, cWhite2)
         text-shadow rgba(cShade1 0.1) -1px -1px 1px, rgba(cWhite1 0.5) 1px 1px 1px
-        text-transform capitalize
         position relative
+        text-align center
 
         &:after, &:before
             bottom 100%
@@ -46,25 +47,25 @@ body.body
         height 100%
         width 100%
 
-    .md-slide-toggle-content
+    .mat-slide-toggle-content
         color fcV-MenuLabel
         font-size 14px
         font-family ffPressStartK
 
-    .md-slider-horizontal
-        .md-slider-track
+    .mat-slider-horizontal
+        .mat-slider-track
             top 17px
             left 18px
             right 18px
 
-    .md-input-element
+    .mat-input-element
         padding 10px 0
 
-    .md-input-placeholder
+    .mat-input-placeholder
         color cWhite3
 
-        &.md-empty
+        &.mat-empty
             padding 10px 0 0 0
 
-    .md-hint
+    .mat-hint
         padding 10px

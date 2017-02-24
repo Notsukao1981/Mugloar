@@ -15,6 +15,7 @@ import {animationInitializeB} from "./animation/component";
 export class MugloarComponent implements OnInit, AfterViewChecked {
     private routerSubscription: Subscription;
     private isLocationAbyss: boolean = false;
+    private version: string = "1.0.1";
 
     /**
      * Component's animation state. Eligible states: init, ready.
@@ -35,11 +36,7 @@ export class MugloarComponent implements OnInit, AfterViewChecked {
             (path) => {
                 if (path instanceof NavigationEnd) {    // Filter-off other navigation cues and only check when it's a "NavigationEnd".
                     // TODO: Remove hardcoded url path and transform it into a class/collection implementation, also adjust *-routing.modules.ts.
-                    if (path.urlAfterRedirects === "/abyss") {
-                        this.isLocationAbyss = true;
-                    } else {
-                        this.isLocationAbyss = false;
-                    }
+                    this.isLocationAbyss = (path.urlAfterRedirects === "/abyss");
                 }
             }
         );
