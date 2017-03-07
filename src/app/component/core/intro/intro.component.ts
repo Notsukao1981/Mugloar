@@ -12,12 +12,18 @@ export class IntroComponent implements OnInit, AfterViewChecked {
      * Component's animation state. Eligible states: init, ready.
      * */
     private animationState: string;
+    private showSetup: boolean;
 
     ngOnInit() {
         this.animationState = "init";
+        this.showSetup = true;
     }
 
     ngAfterViewChecked() {
         this.animationState = "ready";
+    }
+
+    confirmSSL(): void {
+        this.showSetup = false;
     }
 }

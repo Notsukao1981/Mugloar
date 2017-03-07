@@ -15,7 +15,7 @@ import {animationInitializeB} from "./animation/component";
 export class MugloarComponent implements OnInit, AfterViewChecked {
     private routerSubscription: Subscription;
     private isLocationAbyss: boolean = false;
-    private version: string = "1.0.1";
+    private version: string = "1.2.0";
 
     /**
      * Component's animation state. Eligible states: init, ready.
