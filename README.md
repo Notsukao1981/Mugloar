@@ -2,7 +2,7 @@
 
 This project is an implementation response to a challenge project @ http://www.dragonsofmugloar.com/.
 <p>
-<i>Desired dragon survival rate is 60%, the app scores a glorius 95+% - it all comes down to how many storms there are.<i/> 
+<i>Desired dragon survival rate is 60%, the app scores a glorius 95+% - it all comes down to how many storms there are.</i> 
 </p>
 
 <p>
