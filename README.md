@@ -42,7 +42,7 @@ P.S.S. Deployed app can be seen here: <a href="https://mugloar.firebaseapp.com" 
 <br>
 
 <div style="padding: 20px; border: 2px solid #a94442;">
-<b color='red'>Important:</b> For app to work, this domain <a href="https://www.dragonsofmugloar.com" target="_blank"><em>https://www.dragonsofmugloar.com</em></a> should be added temporarily to the trusted sites in the browser.</b>
+<b style="color: red;">Important:</b> For app to work, this domain <a href="https://www.dragonsofmugloar.com" target="_blank"><em>https://www.dragonsofmugloar.com</em></a> should be added temporarily to the trusted sites in the browser.</b>
 </div>
 
 ## Technicalities
